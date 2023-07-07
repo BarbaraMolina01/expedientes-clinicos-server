@@ -1,0 +1,772 @@
+{
+  "version": "5",
+  "dialect": "mysql",
+  "id": "1c1f6ade-177a-4d4b-8a2f-04f6629eb297",
+  "prevId": "482e262b-11eb-444d-918d-7f3f3ad951f9",
+  "tables": {
+    "MAdmin": {
+      "name": "MAdmin",
+      "columns": {
+        "id_adm": {
+          "name": "id_adm",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "id_user": {
+          "name": "id_user",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_adm": {
+          "name": "createdAt_adm",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_adm": {
+          "name": "updateAt_adm",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "MAdmin_id_user_MUser_id_user_fk": {
+          "name": "MAdmin_id_user_MUser_id_user_fk",
+          "tableFrom": "MAdmin",
+          "tableTo": "MUser",
+          "columnsFrom": [
+            "id_user"
+          ],
+          "columnsTo": [
+            "id_user"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {}
+    },
+    "MAntecedentesFamiliares": {
+      "name": "MAntecedentesFamiliares",
+      "columns": {
+        "id_antFam": {
+          "name": "id_antFam",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "pad_antFam": {
+          "name": "pad_antFam",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "mad_antFam": {
+          "name": "mad_antFam",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "abueloPat_antFam": {
+          "name": "abueloPat_antFam",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "abueloMat_antFam": {
+          "name": "abueloMat_antFam",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "tios_antFam": {
+          "name": "tios_antFam",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "otros_antFam": {
+          "name": "otros_antFam",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false
+        },
+        "id_pac": {
+          "name": "id_pac",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_antFam": {
+          "name": "createdAt_antFam",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_antFam": {
+          "name": "updateAt_antFam",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "MAntecedentesFamiliares_id_pac_MPaciente_id_pac_fk": {
+          "name": "MAntecedentesFamiliares_id_pac_MPaciente_id_pac_fk",
+          "tableFrom": "MAntecedentesFamiliares",
+          "tableTo": "MPaciente",
+          "columnsFrom": [
+            "id_pac"
+          ],
+          "columnsTo": [
+            "id_pac"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {}
+    },
+    "MEspecialista": {
+      "name": "MEspecialista",
+      "columns": {
+        "id_esp": {
+          "name": "id_esp",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "id_user": {
+          "name": "id_user",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_per": {
+          "name": "id_per",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_suc": {
+          "name": "id_suc",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_esp": {
+          "name": "createdAt_esp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_esp": {
+          "name": "updateAt_esp",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "MEspecialista_id_user_MUser_id_user_fk": {
+          "name": "MEspecialista_id_user_MUser_id_user_fk",
+          "tableFrom": "MEspecialista",
+          "tableTo": "MUser",
+          "columnsFrom": [
+            "id_user"
+          ],
+          "columnsTo": [
+            "id_user"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MEspecialista_id_per_MPersona_id_per_fk": {
+          "name": "MEspecialista_id_per_MPersona_id_per_fk",
+          "tableFrom": "MEspecialista",
+          "tableTo": "MPersona",
+          "columnsFrom": [
+            "id_per"
+          ],
+          "columnsTo": [
+            "id_per"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MEspecialista_id_suc_CSucursal_id_suc_fk": {
+          "name": "MEspecialista_id_suc_CSucursal_id_suc_fk",
+          "tableFrom": "MEspecialista",
+          "tableTo": "CSucursal",
+          "columnsFrom": [
+            "id_suc"
+          ],
+          "columnsTo": [
+            "id_suc"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {}
+    },
+    "CEstadoCivil": {
+      "name": "CEstadoCivil",
+      "columns": {
+        "id_estCiv": {
+          "name": "id_estCiv",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nombre_estCiv": {
+          "name": "nombre_estCiv",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_estCiv": {
+          "name": "createdAt_estCiv",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_estCiv": {
+          "name": "updateAt_estCiv",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {}
+    },
+    "MPaciente": {
+      "name": "MPaciente",
+      "columns": {
+        "id_pac": {
+          "name": "id_pac",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "tel_pac": {
+          "name": "tel_pac",
+          "type": "varchar(10)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "domi_pac": {
+          "name": "domi_pac",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "lugarNac_pac": {
+          "name": "lugarNac_pac",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "dni_pac": {
+          "name": "dni_pac",
+          "type": "varchar(8)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "ocup_pac": {
+          "name": "ocup_pac",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "desocPorAd_pac": {
+          "name": "desocPorAd_pac",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "religion_pac": {
+          "name": "religion_pac",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "sepPorAd_pac": {
+          "name": "sepPorAd_pac",
+          "type": "boolean",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "fechaIng_pac": {
+          "name": "fechaIng_pac",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "parent_pac": {
+          "name": "parent_pac",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_user": {
+          "name": "id_user",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_per": {
+          "name": "id_per",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "persResp_pac": {
+          "name": "persResp_pac",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "eval_pac": {
+          "name": "eval_pac",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_estCiv": {
+          "name": "id_estCiv",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_suc": {
+          "name": "id_suc",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_pac": {
+          "name": "createdAt_pac",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_pac": {
+          "name": "updateAt_pac",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "MPaciente_id_user_MUser_id_user_fk": {
+          "name": "MPaciente_id_user_MUser_id_user_fk",
+          "tableFrom": "MPaciente",
+          "tableTo": "MUser",
+          "columnsFrom": [
+            "id_user"
+          ],
+          "columnsTo": [
+            "id_user"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MPaciente_id_per_MPersona_id_per_fk": {
+          "name": "MPaciente_id_per_MPersona_id_per_fk",
+          "tableFrom": "MPaciente",
+          "tableTo": "MPersona",
+          "columnsFrom": [
+            "id_per"
+          ],
+          "columnsTo": [
+            "id_per"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MPaciente_persResp_pac_MEspecialista_id_esp_fk": {
+          "name": "MPaciente_persResp_pac_MEspecialista_id_esp_fk",
+          "tableFrom": "MPaciente",
+          "tableTo": "MEspecialista",
+          "columnsFrom": [
+            "persResp_pac"
+          ],
+          "columnsTo": [
+            "id_esp"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MPaciente_eval_pac_MEspecialista_id_esp_fk": {
+          "name": "MPaciente_eval_pac_MEspecialista_id_esp_fk",
+          "tableFrom": "MPaciente",
+          "tableTo": "MEspecialista",
+          "columnsFrom": [
+            "eval_pac"
+          ],
+          "columnsTo": [
+            "id_esp"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MPaciente_id_estCiv_CEstadoCivil_id_estCiv_fk": {
+          "name": "MPaciente_id_estCiv_CEstadoCivil_id_estCiv_fk",
+          "tableFrom": "MPaciente",
+          "tableTo": "CEstadoCivil",
+          "columnsFrom": [
+            "id_estCiv"
+          ],
+          "columnsTo": [
+            "id_estCiv"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        },
+        "MPaciente_id_suc_CSucursal_id_suc_fk": {
+          "name": "MPaciente_id_suc_CSucursal_id_suc_fk",
+          "tableFrom": "MPaciente",
+          "tableTo": "CSucursal",
+          "columnsFrom": [
+            "id_suc"
+          ],
+          "columnsTo": [
+            "id_suc"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {}
+    },
+    "MPersona": {
+      "name": "MPersona",
+      "columns": {
+        "id_per": {
+          "name": "id_per",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nombre_per": {
+          "name": "nombre_per",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "appat_per": {
+          "name": "appat_per",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "apmat_per": {
+          "name": "apmat_per",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "fechaNac_per": {
+          "name": "fechaNac_per",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_sex": {
+          "name": "id_sex",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_per": {
+          "name": "createdAt_per",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_per": {
+          "name": "updateAt_per",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "MPersona_id_sex_CSexo_id_sex_fk": {
+          "name": "MPersona_id_sex_CSexo_id_sex_fk",
+          "tableFrom": "MPersona",
+          "tableTo": "CSexo",
+          "columnsFrom": [
+            "id_sex"
+          ],
+          "columnsTo": [
+            "id_sex"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {}
+    },
+    "CRol": {
+      "name": "CRol",
+      "columns": {
+        "id_rol": {
+          "name": "id_rol",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nombre_rol": {
+          "name": "nombre_rol",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_rol": {
+          "name": "createdAt_rol",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_rol": {
+          "name": "updateAt_rol",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {}
+    },
+    "CSexo": {
+      "name": "CSexo",
+      "columns": {
+        "id_sex": {
+          "name": "id_sex",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nombre_sex": {
+          "name": "nombre_sex",
+          "type": "varchar(50)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_sex": {
+          "name": "createdAt_sex",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_sex": {
+          "name": "updateAt_sex",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {}
+    },
+    "CSucursal": {
+      "name": "CSucursal",
+      "columns": {
+        "id_suc": {
+          "name": "id_suc",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "nombre_suc": {
+          "name": "nombre_suc",
+          "type": "varchar(100)",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt": {
+          "name": "createdAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt": {
+          "name": "updateAt",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {},
+      "compositePrimaryKeys": {}
+    },
+    "MUser": {
+      "name": "MUser",
+      "columns": {
+        "id_user": {
+          "name": "id_user",
+          "type": "int",
+          "primaryKey": true,
+          "notNull": true,
+          "autoincrement": true
+        },
+        "email_user": {
+          "name": "email_user",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "password_user": {
+          "name": "password_user",
+          "type": "text",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "id_rol": {
+          "name": "id_rol",
+          "type": "int",
+          "primaryKey": false,
+          "notNull": true,
+          "autoincrement": false
+        },
+        "createdAt_user": {
+          "name": "createdAt_user",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        },
+        "updateAt_user": {
+          "name": "updateAt_user",
+          "type": "timestamp",
+          "primaryKey": false,
+          "notNull": false,
+          "autoincrement": false,
+          "default": "(now())"
+        }
+      },
+      "indexes": {},
+      "foreignKeys": {
+        "MUser_id_rol_CRol_id_rol_fk": {
+          "name": "MUser_id_rol_CRol_id_rol_fk",
+          "tableFrom": "MUser",
+          "tableTo": "CRol",
+          "columnsFrom": [
+            "id_rol"
+          ],
+          "columnsTo": [
+            "id_rol"
+          ],
+          "onDelete": "no action",
+          "onUpdate": "no action"
+        }
+      },
+      "compositePrimaryKeys": {}
+    }
+  },
+  "schemas": {},
+  "_meta": {
+    "schemas": {},
+    "tables": {},
+    "columns": {}
+  }
+}
